@@ -7,7 +7,6 @@ class Key {
 
 class Person {
   constructor(private key: Key) {
-    key = this.key;
   }
 
   public getKey(): Key {
@@ -16,12 +15,10 @@ class Person {
 }
 
 abstract class House {
-  public door: boolean;
-  public tenants: Person[];
-
+  public door: boolean = false;
+  public tenants: Person[] = [];
+  
   constructor(public key: Key) {
-    this.door = false;
-    this.tenants = [];
   }
 
   public comeIn(person: Person): void {
